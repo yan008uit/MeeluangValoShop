@@ -1,0 +1,4 @@
+*.ts
+*.map
+/server/node_modules
+server/.env
