@@ -14,7 +14,7 @@ function AccountPage() {
 
     useEffect(() => {
         if (account) {
-            document.title = `${account.username} · ${account.rank}`;
+            document.title = `${account.id}`;
         }
     }, [account]);
 
@@ -52,7 +52,7 @@ function AccountPage() {
                     <span>VP Remaining</span>
                 </div>
                 <div>
-                    <strong>{account.radianite}</strong>
+                    <strong>{account.rp}</strong>
                     <span>R Points</span>
                 </div>
                 <div>
@@ -74,8 +74,8 @@ function AccountPage() {
                                 className="item-image"
                                 loading="lazy"
                             />
-                            <h4 className="item-name">{w.skin_name}</h4>
-                            <small className="item-price">{w.type}</small>
+                            <h4 className="item-name">{w.set_name}</h4>
+                            <small className="item-price">{w.weapon_type}</small>
                         </div>
                     ))}
                 </div>

@@ -34,15 +34,41 @@ app.get('/api/accounts', async (req, res) => {
 app.get('/api/accounts/:id', async (req, res) => {
     const { id } = req.params;
 
-    const { data: account, error: accountError } =
-        await supabase.from('accounts').select('*').eq('id', id).single();
+    const { data, error } = await supabase
+        .from('accounts')
+        .select(`
+            id,
+            username,
+            rank,
+            price,
+            image_url,
+            vp,
+            rp,
+            rename_available_date,
+            premier_locked,
+            warranty,
+            account_weapons (
+                weapons (
+                    id,
+                    weapon_type,
+                    set_name,
+                    description,
+                    image_url
+                )
+            )
+        `)
+        .eq('id', id)
+        .single();
 
-    if (accountError) return res.status(404).json(accountError);
+    if (error) return res.status(404).json(error);
 
-    const { data: weapons } =
-        await supabase.from('weapons').select('*').eq('account_id', id);
+    // flatten weapons
+    const weapons = data.account_weapons.map(aw => aw.weapons);
 
-    res.json({ ...account, weapons });
+    res.json({
+        ...data,
+        weapons
+    });
 });
 
 const PORT = 5000;
