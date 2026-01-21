@@ -48,6 +48,15 @@ function AccountPage() {
         )
     })).filter(group => group.items.length > 0);
 
+    const handleBuy = (e, acc) => {
+        e.stopPropagation();
+
+        window.open(
+            `https://www.facebook.com/messages/t/watcharakorn.bucha.5`,
+            '_blank'
+        );
+    };
+
     return (
         <>
             <Navbar />
@@ -68,7 +77,12 @@ function AccountPage() {
 
                     <div className="account-detail-actions">
                         <div className="price">฿{account.price.toLocaleString()}</div>
-                        <button className="contact-btn">Buy</button>
+                        <button
+                            className="contact-btn"
+                            onClick={(e) => handleBuy(e, acc)}
+                        >
+                            Contact to Buy
+                        </button>
                     </div>
                 </div>
             </section>

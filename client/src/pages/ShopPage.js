@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/shop.css';
 
-const FACEBOOK_ACC_URL = 'https://www.facebook.com/watcharakorn.bucha.5';
-
 const ACCOUNT_STATUS = {
     AVAILABLE: 'Available',
     SOLD: 'Sold',
@@ -49,18 +47,8 @@ function ShopPage() {
     const handleBuy = (e, acc) => {
         e.stopPropagation();
 
-        const message = encodeURIComponent(
-            `สวัสดีครับ สนใจซื้อไอดี Valorant นี้ครับ 🙏
-
-🆔 ไอดี: ${acc.id}
-🎖 Rank: ${acc.rank}
-💰 ราคา: ฿${acc.price.toLocaleString()}
-
-ขอรายละเอียดเพิ่มเติมครับ`
-        );
-
         window.open(
-            `https://www.facebook.com/messages/t/watcharakorn.bucha.5?text=${message}`,
+            `https://www.facebook.com/messages/t/watcharakorn.bucha.5`,
             '_blank'
         );
     };
@@ -139,7 +127,7 @@ function ShopPage() {
                             className="buy-btn"
                             onClick={(e) => handleBuy(e, acc)}
                         >
-                            Buy Now
+                            Contact to Buy
                         </button>
                     ) : (
                         <span className="sold-text">Sold</span>
