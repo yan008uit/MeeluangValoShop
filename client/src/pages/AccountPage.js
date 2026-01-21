@@ -2,6 +2,27 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Navbar from "../components/Navbar";
 
+const WEAPON_ORDER = [
+    'Set',
+    'Classic',
+    'Shorty',
+    'Frenzy',
+    'Ghost',
+    'Sheriff',
+    'Stinger',
+    'Spectre',
+    'Bucky',
+    'Judge',
+    'Bulldog',
+    'Guardian',
+    'Phantom',
+    'Vandal',
+    'Marshal',
+    'Operator',
+    'Ares',
+    'Odin',
+];
+
 function AccountPage() {
     const { id } = useParams();
     const [account, setAccount] = useState(null);
@@ -19,6 +40,13 @@ function AccountPage() {
     }, [account]);
 
     if (!account) return null;
+
+    const groupedWeapons = WEAPON_ORDER.map(type => ({
+        type,
+        items: account.weapons.filter(
+            w => w.weapon_type === type
+        )
+    })).filter(group => group.items.length > 0);
 
     return (
         <>
@@ -59,26 +87,50 @@ function AccountPage() {
                     <strong>{account.weapons.length}</strong>
                     <span>Skins</span>
                 </div>
+                <div>
+                    <strong>{account.rename_available_date}</strong>
+                    <span>Rename available date</span>
+                </div>
+                <div>
+                    <strong>
+                        {account.premier_locked ? 'Locked' : 'Not Locked'}
+                    </strong>
+                    <span>Premier Status</span>
+                </div>
+                <div>
+                    <strong>
+                        {account.warranty}
+                    </strong>
+                    <span>Warranty</span>
+                </div>
             </section>
 
             {/* WEAPONS */}
-            <main className="shop-container">
+            <main className="account-container">
                 <h2 className="section-title">Skins in this Account</h2>
 
-                <div className="shop-grid">
-                    {account.weapons.map(w => (
-                        <div key={w.id} className="shop-item">
-                            <img
-                                src={w.image_url}
-                                alt={w.skin_name}
-                                className="item-image"
-                                loading="lazy"
-                            />
-                            <h4 className="item-name">{w.set_name}</h4>
-                            <small className="item-price">{w.weapon_type}</small>
+                {groupedWeapons.map(group => (
+                    <section key={group.type} className="weapon-section">
+                        <h3 className="weapon-section-title">
+                            {group.type === 'Set' ? 'Full Sets' : group.type}
+                        </h3>
+
+                        <div className="account-grid">
+                            {group.items.map(w => (
+                                <div key={w.id} className="shop-item">
+                                    <img
+                                        src={w.image_url}
+                                        alt={w.set_name}
+                                        className="item-image"
+                                        loading="lazy"
+                                    />
+                                    <h4 className="item-name">{w.set_name}</h4>
+                                    <small className="item-price">{w.weapon_type}</small>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </section>
+                ))}
             </main>
         </>
     );

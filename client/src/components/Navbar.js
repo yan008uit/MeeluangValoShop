@@ -5,7 +5,7 @@ function Navbar() {
         <nav className="navbar">
             <div className="navbar-left">
                 <Link to="/" className="logo">
-                    Meeluang Shop
+                    SIER
                 </Link>
             </div>
 
