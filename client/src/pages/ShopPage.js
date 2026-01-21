@@ -50,19 +50,17 @@ function ShopPage() {
         e.stopPropagation();
 
         const message = encodeURIComponent(
-            `สวัสดี ฉันสนใจซื้อไอดีนี้
+            `สวัสดีครับ สนใจซื้อไอดี Valorant นี้ครับ 🙏
 
-🆔 Account: ${acc.id}
-💰 Price: ฿${acc.price.toLocaleString()}
+🆔 ไอดี: ${acc.id}
 🎖 Rank: ${acc.rank}
+💰 ราคา: ฿${acc.price.toLocaleString()}
 
-📸 Account image:
-${acc.image_url}
-`
+ขอรายละเอียดเพิ่มเติมครับ`
         );
 
         window.open(
-            `https://m.me/watcharakorn.bucha.5?ref=shop&text=${message}`,
+            `https://www.facebook.com/messages/t/watcharakorn.bucha.5?text=${message}`,
             '_blank'
         );
     };
