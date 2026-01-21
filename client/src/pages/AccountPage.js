@@ -79,7 +79,7 @@ function AccountPage() {
                         <div className="price">฿{account.price.toLocaleString()}</div>
                         <button
                             className="contact-btn"
-                            onClick={(e) => handleBuy(e, acc)}
+                            onClick={(e) => handleBuy(e)}
                         >
                             Contact to Buy
                         </button>
