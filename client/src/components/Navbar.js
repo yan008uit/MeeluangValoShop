@@ -9,16 +9,15 @@ function Navbar() {
                 </Link>
             </div>
 
-            <ul className="navbar-center">
-                <li>Store</li>
-                <li>Categories</li>
-                <li>About</li>
-            </ul>
-
             <div className="navbar-right">
-                <span className="nav-icon">🔍</span>
-                <span className="nav-icon">🛒</span>
-                <span className="nav-icon">👤</span>
+                <a
+                    href="https://m.me/watcharakorn.bucha.5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-icon contact-btn"
+                >
+                    💬 Contact Us
+                </a>
             </div>
         </nav>
     );
