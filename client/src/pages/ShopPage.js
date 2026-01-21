@@ -44,7 +44,7 @@ function ShopPage() {
         document.title = 'SIAICE RANGSIT SHOP ( SIER )';
     }, []);
 
-    const handleBuy = (e, acc) => {
+    const handleBuy = (e) => {
         e.stopPropagation();
 
         window.open(

@@ -48,7 +48,7 @@ function AccountPage() {
         )
     })).filter(group => group.items.length > 0);
 
-    const handleBuy = (e, acc) => {
+    const handleBuy = (e) => {
         e.stopPropagation();
 
         window.open(
