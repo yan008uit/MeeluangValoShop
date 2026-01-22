@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 
 const WEAPON_ORDER = [
     'Set',
+    'Melee',
     'Classic',
     'Shorty',
     'Frenzy',
@@ -138,7 +139,11 @@ function AccountPage() {
                                         className="item-image"
                                         loading="lazy"
                                     />
-                                    <h4 className="item-name">{w.set_name}</h4>
+                                    <h4 className="item-name">
+                                        {w.weapon_type === 'Melee'
+                                            ? `${w.set_name} ${w.description}` // Reaver Knife
+                                            : w.set_name}
+                                    </h4>
                                     <small className="item-price">{w.weapon_type}</small>
                                 </div>
                             ))}
