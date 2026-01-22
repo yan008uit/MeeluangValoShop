@@ -14,9 +14,9 @@ function Navbar() {
                     href="https://m.me/watcharakorn.bucha.5"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="nav-icon contact-btn"
+                    className="nav-icon contact-us-btn"
                 >
-                    💬 Contact Us
+                    Contact Us
                 </a>
             </div>
         </nav>

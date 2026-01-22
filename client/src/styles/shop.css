@@ -11,7 +11,6 @@ body {
 }
 
 /* NAVBAR */
-/* NAVBAR */
 .navbar {
     position: sticky;
     top: 0;
@@ -58,10 +57,30 @@ body {
         font-size: 18px;
     }
 
-    .contact-btn {
+    .contact-us-btn {
         padding: 8px 14px;
         font-size: 13px;
     }
+}
+
+.contact-us-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #111;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.contact-btn:hover {
+    background: #000;
+    transform: translateY(-1px);
+    color: #111;
 }
 
 /* CONTACT BUTTON */
