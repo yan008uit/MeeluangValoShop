@@ -141,7 +141,7 @@ function AccountPage() {
                                     />
                                     <h4 className="item-name">
                                         {w.weapon_type === 'Melee'
-                                            ? `${w.set_name} ${w.description}` // Reaver Knife
+                                            ? `${w.description}`
                                             : w.set_name}
                                     </h4>
                                     <small className="item-price">{w.weapon_type}</small>
