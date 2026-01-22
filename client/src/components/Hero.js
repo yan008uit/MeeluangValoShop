@@ -13,12 +13,11 @@ function Hero() {
             <div className="hero-text">
                 <h1>Exclusive Valorant Skins</h1>
                 <p>Daily rotating offers for your account</p>
-                <button className="hero-button" >Shop Now</button>
                 <button
                     className="contact-btn"
                     onClick={(e) => handleBuy(e)}
                 >
-                    Contact to Buy
+                    Buy Now
                 </button>
             </div>
         </section>
