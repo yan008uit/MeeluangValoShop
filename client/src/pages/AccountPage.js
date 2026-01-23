@@ -74,7 +74,7 @@ function AccountPage() {
                         {account.rank}
                     </span>
 
-                    <h1>{account.username}</h1>
+                    <h1>{account.id}</h1>
 
                     <div className="account-detail-actions">
                         <div className="price">฿{account.price.toLocaleString()}</div>
