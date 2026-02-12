@@ -11,8 +11,8 @@ function Hero() {
     return (
         <section className="hero hero-bg">
             <div className="hero-text">
-                <h1>Exclusive Valorant Skins</h1>
-                <p>Daily rotating offers for your account</p>
+                <h1>SiaIceRagsit</h1>
+                <p>รับซื้อ-ขาย ID.Valorant</p>
                 <button
                     className="contact-btn"
                     onClick={(e) => handleBuy(e)}
