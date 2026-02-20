@@ -20,6 +20,7 @@ const WEAPON_ORDER = [
     'Phantom',
     'Vandal',
     'Marshal',
+    'Outlaw',
     'Operator',
     'Ares',
     'Odin',
